@@ -1,10 +1,42 @@
-/* Fira Sans Condensed Font */
+/* Casoola Fonts - matching original site */
 @font-face {
-    font-family: 'Fira Sans Condensed';
-    font-style: normal;
+    font-family: 'New Spirit';
+    src: url('https://casoola.com/cfr/cf6fa57bdbf4547/p/03-02-2026-09-04-08-f4f631e2/new-spirit-regular.588f4cfb19a2da03.woff2') format('woff2');
     font-weight: 400;
+    font-style: normal;
     font-display: swap;
-    src: url('https://fonts.gstatic.com/s/firasanscondensed/v11/wEOsEADFm8hSaQTFG18FErVhsC9x-tarWU3IuMR0cg.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'New Spirit';
+    src: url('https://casoola.com/cfr/cf6fa57bdbf4547/p/03-02-2026-09-04-08-f4f631e2/new-spirit-semibold.a6e2a85aa36646cc.woff2') format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'New Spirit';
+    src: url('https://casoola.com/cfr/cf6fa57bdbf4547/p/03-02-2026-09-04-08-f4f631e2/new-spirit-bold.a008d22b94d1c38b.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proza Libre';
+    src: url('https://casoola.com/cfr/cf6fa57bdbf4547/p/03-02-2026-09-04-08-f4f631e2/proza-libre-regular.a66648bc86fea285.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Proza Libre';
+    src: url('https://casoola.com/cfr/cf6fa57bdbf4547/p/03-02-2026-09-04-08-f4f631e2/proza-libre-bold.e5a7606263f2806c.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
 }
 
 /* Reset & Base Styles */
@@ -33,25 +65,33 @@ html, body {
 }
 
 :root {
-    /* Casoola Color Scheme - темно-красный/бордовый и золотой */
-    --color-primary: #D4AF37; /* Золотой */
-    --color-primary-dark: #B8941F;
-    --color-primary-light: #E5C158;
-    --color-secondary: #8B0000; /* Темно-красный */
-    --color-accent: #D4AF37; /* Золотой */
-    --color-accent-dark: #B8941F;
-    --color-neon-blue: #00d4ff;
-    --color-neon-blue-light: #4ae5ff;
-    --color-neon-blue-dark: #0099cc;
-    --color-text: #f5f5dc; /* Бежевый текст */
-    --color-text-light: #D4AF37; /* Золотой для акцентов */
-    --color-bg: #1a1a1a; /* Очень темный фон */
-    --color-bg-light: #2d2d2d; /* Светлее для карточек */
-    --color-bg-dark: #4a1a1a; /* Темно-красный/бордовый для sidebar */
-    --color-sidebar-bg: #4a1a1a; /* Темно-красный/бордовый sidebar */
-    --color-border: #6a2a2a; /* Красно-коричневая граница */
-    --color-success: #10b981;
-    --color-warning: #f59e0b;
+    /* Casoola Color Scheme - matching original site casoola.com */
+    /* Brand colors - красные/розовые */
+    --color-primary: #8B1528; /* темный и тусклый оттенок */
+    --color-primary-dark: #6B0F1E; /* более темный */
+    --color-primary-light: #A01A2F; /* более светлый, но тусклый */
+    --color-secondary: #2A0B0E; /* neutral-50 */
+    --color-accent: #FFC506; /* accent-400 золотой */
+    --color-accent-dark: #D4A200; /* accent-200 */
+    --color-accent-light: #FFD138; /* accent-500 */
+    
+    /* Text colors */
+    --color-text: #FFF9E6; /* neutral-200 основной текст */
+    --color-text-light: #FFEEB4; /* neutral-300 вторичный текст */
+    --color-text-muted: #B7975B; /* neutral-400 приглушенный */
+    --color-text-gold: #FFD138; /* accent-500 золотой текст */
+    
+    /* Background colors */
+    --color-bg: #190101; /* neutral-10 базовый фон */
+    --color-bg-light: #2A0B0E; /* neutral-50 карточки */
+    --color-bg-dark: #330E11; /* neutral-100 темные элементы */
+    --color-sidebar-bg: #2A0B0E; /* neutral-50 */
+    --color-border: #330E11; /* neutral-100 границы */
+    
+    /* Status colors */
+    --color-success: #7FC03D; /* positive-base */
+    --color-warning: #F49A41; /* warning-base */
+    --color-error: #E83434; /* negative-base */
     --spacing-xs: 0.5rem;
     --spacing-sm: 1rem;
     --spacing-md: 1.5rem;
@@ -73,11 +113,11 @@ html {
 }
 
 body {
-    font-family: 'Fira Sans Condensed', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Proza Libre', 'Noto Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 16px;
     line-height: 1.6;
     color: var(--color-text);
-    background: #1a1a1a; /* Темный фон как на реальном сайте */
+    background: var(--color-bg); /* Matching original site */
     background-attachment: fixed;
     position: relative;
     -webkit-font-smoothing: antialiased;
@@ -86,8 +126,9 @@ body {
 
 /* Общие стили для всех HTML заголовков */
 h1, h2, h3, h4, h5, h6 {
-    color: #F4DAC0;
-    font-weight: 700;
+    font-family: 'New Spirit', 'Noto Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    color: var(--color-text);
+    font-weight: 600;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
 }
 
@@ -176,7 +217,7 @@ a {
 .header {
     position: sticky;
     top: 0;
-    background-color: #4a1a1a; /* Темно-красный/бордовый фон */
+    background-color: var(--color-bg-light); /* Matching original site */
     border-bottom: 1px solid rgba(212, 175, 55, 0.3); /* Золотая граница */
     z-index: 999;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
@@ -644,6 +685,15 @@ a {
     text-shadow: 0 0 10px rgba(192, 157, 107, 0.5), 0 2px 4px rgba(0, 0, 0, 0.5);
 }
 
+.button-image--red {
+    filter: drop-shadow(0 0 15px rgba(139, 21, 40, 0.8)) drop-shadow(0 4px 20px rgba(139, 21, 40, 0.4));
+}
+
+.button-image--red:hover {
+    filter: drop-shadow(0 0 20px rgba(139, 21, 40, 1)) drop-shadow(0 6px 25px rgba(139, 21, 40, 0.6));
+    transform: scale(1.08);
+}
+
 .button-image--block {
     width: 100%;
     display: block;
@@ -759,7 +809,7 @@ a {
 }
 
 .spin-rally-game-card {
-    background: #4a1a1a; /* Темно-коричневый фон */
+    background: var(--color-bg-light); /* Matching original site */
     border: 2px solid rgba(212, 175, 55, 0.4);
     border-radius: var(--border-radius);
     padding: var(--spacing-sm);
@@ -963,12 +1013,13 @@ a {
 }
 
 .hero__title {
+    font-family: 'New Spirit', 'Noto Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 3.5rem;
-    font-weight: 800;
+    font-weight: 600;
     line-height: 1.2;
     margin-bottom: var(--spacing-md);
-    color: #F4DAC0;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.3);
+    color: var(--color-text);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 197, 6, 0.3);
 }
 
 .hero__text {
@@ -1147,10 +1198,11 @@ a {
     margin-bottom: var(--spacing-md);
     color: #F4DAC0;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.3);
+    text-align: center;
 }
 
 .hero-text__text {
-    font-size: 1.25rem;
+    font-size: 1.5rem;
     color: var(--color-text);
     margin-bottom: var(--spacing-xl);
     line-height: 1.7;
@@ -1160,6 +1212,7 @@ a {
     background: rgba(74, 26, 26, 0.5);
     border-radius: var(--border-radius);
     border: 1px solid rgba(212, 175, 55, 0.2);
+    text-align: center;
 }
 
 .hero-text__cta {
@@ -1172,12 +1225,13 @@ a {
 
 /* Section Styles */
 .section-title {
+    font-family: 'New Spirit', 'Noto Serif', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 2.5rem;
-    font-weight: 800;
+    font-weight: 600;
     text-align: center;
     margin-bottom: var(--spacing-md);
-    color: #F4DAC0;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.3);
+    color: var(--color-text);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 197, 6, 0.3);
 }
 
 .section-subtitle {
@@ -1795,19 +1849,19 @@ a {
 }
 
 .content-block--bg-1 {
-    background-image: url('../images/text1.webp');
+    background-image: url('../images/img1.jpg');
 }
 
 .content-block--bg-2 {
-    background-image: url('../images/text2.webp');
+    background-image: url('../images/img2.jpg');
 }
 
 .content-block--bg-3 {
-    background-image: url('../images/text3.webp');
+    background-image: url('../images/img4.jpg');
 }
 
 .content-block--bg-4 {
-    background-image: url('../images/text4.webp');
+    background-image: url('../images/img1.jpg');
 }
 
 .content-block::before {
@@ -1847,6 +1901,7 @@ a {
     z-index: 2;
     width: 100%;
     max-width: 100%;
+    text-align: center;
 }
 
 .content-block__title {
@@ -1856,6 +1911,7 @@ a {
     color: #F4DAC0;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.3);
     position: relative;
+    text-align: center;
 }
 
 .content-block__text {
@@ -1864,6 +1920,7 @@ a {
     color: var(--color-text);
     margin-bottom: var(--spacing-lg);
     position: relative;
+    text-align: center;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
     width: 100%;
     padding: var(--spacing-md);
