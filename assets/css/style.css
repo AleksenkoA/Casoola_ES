@@ -768,7 +768,7 @@ a {
     align-items: center;
     justify-content: center;
     position: relative;
-    transition: var(--transition);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
     text-decoration: none;
     border: none;
@@ -783,7 +783,7 @@ a {
 }
 
 .button-image:hover {
-    transform: scale(1.05);
+    transform: translateY(-2px) scale(1.02);
     filter: none;
 }
 
@@ -796,7 +796,9 @@ a {
     object-fit: contain;
     display: block;
     filter: none;
-    transition: all 0.3s ease;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 8px;
+    box-shadow: none;
 }
 
 /* Адаптивные размеры кнопок */
@@ -839,14 +841,14 @@ a {
     font-weight: 700;
     font-size: clamp(0.5rem, 2vw, 0.75rem);
     text-transform: uppercase;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.3px;
     white-space: normal;
     z-index: 10;
     pointer-events: none;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9), 0 1px 3px rgba(0, 0, 0, 0.7);
     max-width: 65%;
     max-height: 90%;
-    line-height: 1.1;
+    line-height: 1.15;
     text-align: center;
     word-wrap: break-word;
     overflow-wrap: break-word;
@@ -854,6 +856,7 @@ a {
     hyphens: auto;
     box-sizing: border-box;
     padding: 2px 3px;
+    transition: all 0.3s ease;
 }
 
 /* Адаптивные размеры текста */
@@ -890,12 +893,20 @@ a {
 }
 
 .button-image--gold {
-    filter: drop-shadow(0 0 15px rgba(212, 175, 55, 0.8)) drop-shadow(0 4px 20px rgba(212, 175, 55, 0.4));
+    filter: none;
 }
 
 .button-image--gold:hover {
-    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 1)) drop-shadow(0 6px 25px rgba(212, 175, 55, 0.6));
-    transform: scale(1.08);
+    filter: none;
+    transform: translateY(-2px) scale(1.02);
+}
+
+.button-image--gold .button-image__img {
+    box-shadow: none;
+}
+
+.button-image--gold:hover .button-image__img {
+    box-shadow: none;
 }
 
 .button-image--gold .button-image__text {
@@ -910,7 +921,15 @@ a {
 
 .button-image--red:hover {
     filter: none;
-    transform: scale(1.08);
+    transform: translateY(-2px) scale(1.02);
+}
+
+.button-image--red .button-image__img {
+    box-shadow: none;
+}
+
+.button-image--red:hover .button-image__img {
+    box-shadow: none;
 }
 
 .button-image--block {
@@ -2287,6 +2306,154 @@ a {
     margin-bottom: 0;
 }
 
+/* Styled Lists in Content Blocks */
+.content-block ul {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-lg) auto;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+}
+
+.content-block ul li {
+    background: linear-gradient(135deg, rgba(155, 26, 47, 0.4) 0%, rgba(74, 26, 26, 0.6) 50%, rgba(155, 26, 47, 0.4) 100%);
+    border: 2px solid rgba(255, 184, 0, 0.3);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-lg);
+    color: var(--color-text);
+    font-size: 1rem;
+    line-height: 1.7;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: left;
+}
+
+.content-block ul li::before {
+    content: '✨';
+    position: absolute;
+    left: var(--spacing-md);
+    top: var(--spacing-lg);
+    font-size: 1.2rem;
+    opacity: 0.7;
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+.content-block ul li:hover {
+    transform: translateY(-3px) translateX(5px);
+    border-color: var(--color-accent);
+    box-shadow: 0 6px 25px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 184, 0, 0.3);
+    background: linear-gradient(135deg, rgba(155, 26, 47, 0.5) 0%, rgba(74, 26, 26, 0.7) 50%, rgba(155, 26, 47, 0.5) 100%);
+}
+
+.content-block ul li:hover::before {
+    opacity: 1;
+    transform: scale(1.2);
+}
+
+.content-block ul li strong {
+    color: var(--color-accent);
+    font-weight: 700;
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-size: 1.05rem;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+}
+
+/* Styled Lists in Regular Sections (not in content-block or FAQ) */
+section ul:not(.faq__list),
+.main-content ul:not(.faq__list):not(.content-block ul) {
+    list-style: none;
+    padding: 0;
+    margin: var(--spacing-lg) auto;
+    max-width: 900px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: var(--spacing-md);
+}
+
+section ul:not(.faq__list) li,
+.main-content ul:not(.faq__list):not(.content-block ul) li {
+    background: linear-gradient(135deg, rgba(155, 26, 47, 0.3) 0%, rgba(74, 26, 26, 0.5) 50%, rgba(155, 26, 47, 0.3) 100%);
+    border: 2px solid rgba(255, 184, 0, 0.25);
+    border-radius: var(--border-radius-lg);
+    padding: var(--spacing-md) var(--spacing-lg);
+    padding-left: calc(var(--spacing-lg) + 1.5rem);
+    color: var(--color-text);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    position: relative;
+    transition: all 0.3s ease;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    text-align: left;
+}
+
+section ul:not(.faq__list) li::before,
+.main-content ul:not(.faq__list):not(.content-block ul) li::before {
+    content: '🎰';
+    position: absolute;
+    left: var(--spacing-sm);
+    top: var(--spacing-md);
+    font-size: 1rem;
+    opacity: 0.6;
+    transition: all 0.3s ease;
+}
+
+section ul:not(.faq__list) li:hover,
+.main-content ul:not(.faq__list):not(.content-block ul) li:hover {
+    transform: translateY(-2px);
+    border-color: var(--color-accent);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.35), 0 0 15px rgba(255, 184, 0, 0.25);
+    background: linear-gradient(135deg, rgba(155, 26, 47, 0.4) 0%, rgba(74, 26, 26, 0.6) 50%, rgba(155, 26, 47, 0.4) 100%);
+}
+
+section ul:not(.faq__list) li:hover::before,
+.main-content ul:not(.faq__list):not(.content-block ul) li:hover::before {
+    opacity: 1;
+    transform: scale(1.15);
+}
+
+section ul:not(.faq__list) li strong,
+.main-content ul:not(.faq__list):not(.content-block ul) li strong {
+    color: var(--color-accent);
+    font-weight: 700;
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-size: 1rem;
+}
+
+.content-block ul li {
+    padding-left: calc(var(--spacing-lg) + 1.5rem);
+}
+
+@media (max-width: 768px) {
+    .content-block ul li,
+    section ul:not(.faq__list) li,
+    .main-content ul:not(.faq__list):not(.content-block ul) li {
+        padding: var(--spacing-md);
+        padding-left: calc(var(--spacing-md) + 1.5rem);
+        font-size: 0.9rem;
+    }
+    
+    .content-block ul li strong,
+    section ul:not(.faq__list) li strong,
+    .main-content ul:not(.faq__list):not(.content-block ul) li strong {
+        font-size: 0.95rem;
+    }
+    
+    section ul:not(.faq__list),
+    .main-content ul:not(.faq__list):not(.content-block ul) {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* FAQ */
 .faq {
     padding: var(--spacing-2xl) 0;
@@ -2401,6 +2568,9 @@ a {
     position: relative;
     overflow: hidden;
     scroll-margin-top: 80px;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
 }
 
 .big-cta::before {
@@ -2475,17 +2645,25 @@ a {
     position: relative;
     z-index: 2;
     align-items: center;
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    padding: 0 var(--spacing-md);
 }
 
 .big-cta__buttons .button-image {
     max-width: 100%;
     min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .big-cta__buttons .button-image__img {
     max-width: 100%;
-    width: auto;
+    width: 100%;
     height: auto;
+    min-width: 0;
+    box-sizing: border-box;
 }
 
 .big-cta__buttons .button-image__text {
@@ -3698,16 +3876,32 @@ a {
     .big-cta__buttons {
         flex-direction: column;
         align-items: stretch;
+        padding: 0 var(--spacing-sm);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
     }
     
     .big-cta__buttons .button-image {
         width: 100%;
+        max-width: 100%;
         display: block;
+        margin: 0 auto;
+        box-sizing: border-box;
     }
     
     .big-cta__buttons .button-image__img {
         width: 100%;
         max-width: 100%;
+        min-width: 0 !important;
+        height: auto;
+        box-sizing: border-box;
+    }
+    
+    .big-cta__buttons .button-image__text {
+        font-size: clamp(0.5rem, 2.5vw, 0.65rem) !important;
+        max-width: 90% !important;
+        padding: 0 8px !important;
     }
     
     .steps__grid {
@@ -3741,6 +3935,34 @@ a {
     
     body {
         font-size: 13px;
+    }
+    
+    .big-cta__buttons {
+        padding: 0 var(--spacing-xs);
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .big-cta__buttons .button-image {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0 !important;
+        box-sizing: border-box;
+    }
+    
+    .big-cta__buttons .button-image__img {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        box-sizing: border-box;
+    }
+    
+    .big-cta__buttons .button-image__text {
+        font-size: clamp(0.45rem, 3vw, 0.6rem) !important;
+        max-width: 92% !important;
+        padding: 0 6px !important;
     }
     
     h1 {
@@ -4169,6 +4391,34 @@ a {
     .header {
         padding: var(--spacing-xs) 4px;
         gap: 4px;
+    }
+    
+    .big-cta__buttons {
+        padding: 0 8px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .big-cta__buttons .button-image {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0 !important;
+        box-sizing: border-box;
+    }
+    
+    .big-cta__buttons .button-image__img {
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        height: auto !important;
+        box-sizing: border-box;
+    }
+    
+    .big-cta__buttons .button-image__text {
+        font-size: clamp(0.4rem, 3.5vw, 0.55rem) !important;
+        max-width: 95% !important;
+        padding: 0 4px !important;
     }
     
     .header__logo {
