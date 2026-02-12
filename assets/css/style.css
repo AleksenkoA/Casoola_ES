@@ -736,32 +736,42 @@ a {
     transform: translate(-50%, -50%);
     color: #F4DAC0 !important;
     font-weight: 700;
-    font-size: clamp(0.55rem, 1.8vw, 0.8rem);
+    font-size: clamp(0.4rem, 1.3vw, 0.65rem);
     text-transform: uppercase;
-    letter-spacing: 0.3px;
+    letter-spacing: 0.2px;
     white-space: normal;
     z-index: 20 !important;
     pointer-events: none;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
     display: block !important;
     visibility: visible !important;
-    max-width: 60%;
+    max-width: 65%;
     max-height: 90%;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    word-wrap: normal;
+    overflow-wrap: normal;
     overflow: hidden;
     padding: 2px 2px;
     text-align: center;
     line-height: 1.1;
+    hyphens: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
 }
 
 @media (min-width: 768px) {
     .welcome-banner__button .button-image__text {
         white-space: normal;
-        font-size: clamp(0.6rem, 1.5vw, 0.85rem);
+        font-size: clamp(0.55rem, 1.4vw, 0.8rem);
         max-width: 70%;
         padding: 4px 4px;
         line-height: 1.15;
+        hyphens: none;
+        -webkit-hyphens: none;
+        -moz-hyphens: none;
+        -ms-hyphens: none;
+        word-wrap: normal;
+        overflow-wrap: normal;
     }
 }
 
@@ -946,11 +956,14 @@ a {
     max-height: 85%;
     line-height: 1.15;
     text-align: center;
-    word-wrap: break-word;
-    overflow-wrap: break-word;
+    word-wrap: normal;
+    overflow-wrap: normal;
     overflow: hidden;
     box-sizing: border-box;
-    hyphens: auto;
+    hyphens: none;
+    -webkit-hyphens: none;
+    -moz-hyphens: none;
+    -ms-hyphens: none;
     padding: clamp(2px, 0.5vw, 10px) clamp(2px, 0.5vw, 10px);
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
@@ -1595,12 +1608,12 @@ a {
     line-height: 1.2;
     margin-bottom: var(--spacing-md);
     color: #F4DAC0;
-    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.7), 0 0 20px rgba(212, 175, 55, 0.3);
+    text-shadow: none;
     text-align: center;
 }
 
 .hero-text__text {
-    font-size: 1.5rem;
+    font-size: 1.35rem;
     color: var(--color-text);
     margin-bottom: var(--spacing-xl);
     line-height: 1.7;
@@ -4117,6 +4130,18 @@ section ul:not(.faq__list) li strong,
         padding: 0 6px !important;
     }
     
+    .welcome-banner__button .button-image__text {
+        font-size: clamp(0.35rem, 1.1vw, 0.55rem) !important;
+        max-width: 68% !important;
+        padding: 2px 2px !important;
+        hyphens: none !important;
+        -webkit-hyphens: none !important;
+        -moz-hyphens: none !important;
+        -ms-hyphens: none !important;
+        word-wrap: normal !important;
+        overflow-wrap: normal !important;
+    }
+    
     h1 {
         font-size: 1.75rem;
     }
@@ -4361,6 +4386,17 @@ section ul:not(.faq__list) li strong,
 }
 
 @media (max-width: 600px) {
+    .welcome-banner__button .button-image__text {
+        font-size: clamp(0.38rem, 1.15vw, 0.58rem) !important;
+        max-width: 66% !important;
+        hyphens: none !important;
+        -webkit-hyphens: none !important;
+        -moz-hyphens: none !important;
+        -ms-hyphens: none !important;
+        word-wrap: normal !important;
+        overflow-wrap: normal !important;
+    }
+    
     .header {
         padding: var(--spacing-xs) 6px;
         gap: 6px;
