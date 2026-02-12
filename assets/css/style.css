@@ -702,9 +702,25 @@ a {
 
 @media (min-width: 1200px) {
     .welcome-banner__button .button-image__img {
-        min-width: 340px;
-        max-width: 430px;
-        max-height: 58px;
+        min-width: 380px;
+        max-width: 480px;
+        max-height: 65px;
+    }
+}
+
+@media (min-width: 1600px) {
+    .welcome-banner__button .button-image__img {
+        min-width: 420px;
+        max-width: 520px;
+        max-height: 72px;
+    }
+}
+
+@media (min-width: 1920px) {
+    .welcome-banner__button .button-image__img {
+        min-width: 460px;
+        max-width: 560px;
+        max-height: 80px;
     }
 }
 
@@ -783,8 +799,13 @@ a {
 }
 
 .button-image:hover {
-    transform: translateY(-2px) scale(1.02);
+    transform: translateY(-5px) scale(1.05);
     filter: none;
+}
+
+.button-image:active {
+    transform: translateY(-2px) scale(1.02);
+    transition: transform 0.15s ease;
 }
 
 .button-image__img {
@@ -796,39 +817,90 @@ a {
     object-fit: contain;
     display: block;
     filter: none;
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
     border-radius: 8px;
-    box-shadow: none;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15), 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Адаптивные размеры кнопок */
+/* Исключаем header кнопки и специальные кнопки из увеличения */
+.button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__img {
+    width: auto !important;
+}
+
+.button-image:hover .button-image__img {
+    filter: brightness(1.1) saturate(1.1);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.25), 0 4px 15px rgba(0, 0, 0, 0.15);
+    transform: scale(1.02);
+}
+
+.button-image:active .button-image__img {
+    filter: brightness(0.95);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(0.98);
+}
+
+/* Адаптивные размеры кнопок - плавное уменьшение */
 @media (min-width: 480px) {
-    .button-image__img {
-        min-width: 250px;
+    .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__img {
+        min-width: 400px;
         max-width: 100%;
+        max-height: 120px;
     }
 }
 
 @media (min-width: 768px) {
-    .button-image__img {
-        min-width: 320px;
+    .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__img {
+        min-width: 450px;
         max-width: 100%;
+        max-height: 130px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__img {
+        min-width: 600px;
+        max-width: 750px;
+        max-height: 150px;
     }
 }
 
 @media (min-width: 1200px) {
-    .button-image__img {
-        min-width: 400px;
-        max-width: 500px;
-        max-height: 140px;
+    .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__img {
+        min-width: 500px !important;
+        max-width: 650px !important;
+        width: auto !important;
+        max-height: 110px !important;
+        height: auto !important;
+    }
+}
+
+@media (min-width: 1400px) {
+    .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__img {
+        min-width: 550px !important;
+        max-width: 720px !important;
+        width: auto !important;
+        max-height: 120px !important;
+        height: auto !important;
     }
 }
 
 @media (min-width: 1600px) {
-    .button-image__img {
-        min-width: 500px;
-        max-width: 600px;
-        max-height: 160px;
+    .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__img {
+        min-width: 600px !important;
+        max-width: 780px !important;
+        width: auto !important;
+        max-height: 130px !important;
+        height: auto !important;
+    }
+}
+
+@media (min-width: 1920px) {
+    .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__img {
+        min-width: 650px !important;
+        max-width: 850px !important;
+        width: auto !important;
+        max-height: 140px !important;
+        height: auto !important;
     }
 }
 
@@ -838,16 +910,16 @@ a {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #F4DAC0;
-    font-weight: 700;
-    font-size: clamp(0.5rem, 2vw, 0.75rem);
+    font-weight: 800;
+    font-size: clamp(0.5rem, 2.5vw, 1.5rem);
     text-transform: uppercase;
-    letter-spacing: 0.3px;
+    letter-spacing: clamp(0.3px, 0.1vw, 1px);
     white-space: normal;
     z-index: 10;
     pointer-events: none;
-    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.9), 0 1px 3px rgba(0, 0, 0, 0.7);
-    max-width: 65%;
-    max-height: 90%;
+    text-shadow: 0 3px 8px rgba(0, 0, 0, 0.95), 0 2px 4px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
+    max-width: 75%;
+    max-height: 85%;
     line-height: 1.15;
     text-align: center;
     word-wrap: break-word;
@@ -855,40 +927,78 @@ a {
     overflow: hidden;
     hyphens: auto;
     box-sizing: border-box;
-    padding: 2px 3px;
-    transition: all 0.3s ease;
+    padding: clamp(2px, 0.5vw, 12px) clamp(3px, 0.8vw, 18px);
+    transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
-/* Адаптивные размеры текста */
+.button-image:hover .button-image__text {
+    text-shadow: 0 4px 12px rgba(0, 0, 0, 1), 0 3px 6px rgba(0, 0, 0, 0.9), 0 0 15px rgba(0, 0, 0, 0.7);
+    transform: translate(-50%, -50%) scale(1.05);
+    color: #FFF9E6;
+}
+
+.button-image:active .button-image__text {
+    transform: translate(-50%, -50%) scale(0.97);
+}
+
+/* Адаптивные размеры текста - резиновые, вписанные в кнопку */
 @media (min-width: 480px) {
-    .button-image__text {
-        font-size: clamp(0.55rem, 1.8vw, 0.7rem);
-        max-width: 70%;
-        padding: 3px 4px;
+    .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__text {
+        font-size: clamp(0.55rem, 2.2vw, 0.75rem);
+        max-width: 72%;
+        padding: clamp(3px, 0.6vw, 6px) clamp(4px, 0.8vw, 8px);
     }
 }
 
 @media (min-width: 768px) {
-    .button-image__text {
-        font-size: clamp(0.6rem, 1.6vw, 0.8rem);
-        max-width: 72%;
-        padding: 4px 5px;
+    .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__text {
+        font-size: clamp(0.65rem, 2vw, 0.9rem);
+        max-width: 73%;
+        padding: clamp(4px, 0.7vw, 8px) clamp(5px, 0.9vw, 10px);
+    }
+}
+
+@media (min-width: 1024px) {
+    .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__text {
+        font-size: clamp(0.75rem, 1.8vw, 1rem);
+        max-width: 74%;
+        padding: clamp(5px, 0.8vw, 10px) clamp(6px, 1vw, 12px);
     }
 }
 
 @media (min-width: 1200px) {
-    .button-image__text {
-        font-size: clamp(0.65rem, 1.4vw, 0.85rem);
+    .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__text {
+        font-size: clamp(0.7rem, 1.4vw, 0.9rem);
         max-width: 75%;
-        padding: 5px 6px;
+        padding: clamp(4px, 0.7vw, 8px) clamp(6px, 1vw, 10px);
+        letter-spacing: clamp(0.4px, 0.06vw, 0.6px);
+    }
+}
+
+@media (min-width: 1400px) {
+    .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__text {
+        font-size: clamp(0.75rem, 1.3vw, 0.95rem);
+        max-width: 75%;
+        padding: clamp(5px, 0.8vw, 9px) clamp(7px, 1.1vw, 11px);
+        letter-spacing: clamp(0.45px, 0.07vw, 0.65px);
     }
 }
 
 @media (min-width: 1600px) {
-    .button-image__text {
-        font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+    .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__text {
+        font-size: clamp(0.8rem, 1.2vw, 1rem);
         max-width: 75%;
-        padding: 6px 8px;
+        padding: clamp(5px, 0.85vw, 10px) clamp(7px, 1.15vw, 12px);
+        letter-spacing: clamp(0.5px, 0.08vw, 0.7px);
+    }
+}
+
+@media (min-width: 1920px) {
+    .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__text {
+        font-size: clamp(0.85rem, 1.1vw, 1.05rem);
+        max-width: 75%;
+        padding: clamp(6px, 0.9vw, 11px) clamp(8px, 1.2vw, 13px);
+        letter-spacing: clamp(0.55px, 0.09vw, 0.75px);
     }
 }
 
@@ -898,6 +1008,15 @@ a {
 
 .button-image--gold:hover {
     filter: none;
+    transform: translateY(-5px) scale(1.05);
+}
+
+.button-image--gold:hover .button-image__img {
+    filter: brightness(1.2) saturate(1.25);
+    box-shadow: 0 10px 35px rgba(255, 184, 0, 0.5), 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button-image--gold:active {
     transform: translateY(-2px) scale(1.02);
 }
 
@@ -921,6 +1040,15 @@ a {
 
 .button-image--red:hover {
     filter: none;
+    transform: translateY(-5px) scale(1.05);
+}
+
+.button-image--red:hover .button-image__img {
+    filter: brightness(1.15) saturate(1.2);
+    box-shadow: 0 10px 35px rgba(155, 26, 47, 0.4), 0 5px 20px rgba(0, 0, 0, 0.2);
+}
+
+.button-image--red:active {
     transform: translateY(-2px) scale(1.02);
 }
 
