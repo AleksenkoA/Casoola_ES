@@ -600,7 +600,7 @@ a {
     margin-top: 0;
     margin-bottom: var(--spacing-lg);
     overflow: visible;
-    min-height: 600px;
+    min-height: 680px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -684,9 +684,9 @@ a {
 .welcome-banner__button .button-image__img {
     width: auto;
     height: auto;
-    min-width: 280px;
+    min-width: 350px;
     max-width: 100%;
-    max-height: 58px;
+    max-height: 75px;
     object-fit: contain;
     transition: all 0.3s ease;
 }
@@ -694,33 +694,33 @@ a {
 /* Адаптивные размеры для welcome banner кнопки */
 @media (min-width: 768px) {
     .welcome-banner__button .button-image__img {
-        min-width: 320px;
-        max-width: 400px;
-        max-height: 58px;
+        min-width: 420px;
+        max-width: 500px;
+        max-height: 75px;
     }
 }
 
 @media (min-width: 1200px) {
     .welcome-banner__button .button-image__img {
-        min-width: 380px;
-        max-width: 480px;
-        max-height: 65px;
+        min-width: 500px;
+        max-width: 600px;
+        max-height: 85px;
     }
 }
 
 @media (min-width: 1600px) {
     .welcome-banner__button .button-image__img {
-        min-width: 420px;
-        max-width: 520px;
-        max-height: 72px;
+        min-width: 550px;
+        max-width: 650px;
+        max-height: 95px;
     }
 }
 
 @media (min-width: 1920px) {
     .welcome-banner__button .button-image__img {
-        min-width: 460px;
-        max-width: 560px;
-        max-height: 80px;
+        min-width: 600px;
+        max-width: 700px;
+        max-height: 105px;
     }
 }
 
@@ -735,24 +735,24 @@ a {
     left: 50%;
     transform: translate(-50%, -50%);
     color: #F4DAC0 !important;
-    font-weight: 700;
-    font-size: clamp(0.4rem, 1.3vw, 0.65rem);
+    font-weight: 800;
+    font-size: clamp(0.5rem, 1.3vw, 0.7rem);
     text-transform: uppercase;
-    letter-spacing: 0.2px;
+    letter-spacing: 0.25px;
     white-space: normal;
     z-index: 20 !important;
     pointer-events: none;
     text-shadow: 0 2px 8px rgba(0, 0, 0, 0.8), 0 0 10px rgba(0, 0, 0, 0.5);
     display: block !important;
     visibility: visible !important;
-    max-width: 65%;
+    max-width: 85%;
     max-height: 90%;
     word-wrap: normal;
     overflow-wrap: normal;
     overflow: hidden;
-    padding: 2px 2px;
+    padding: 4px 8px;
     text-align: center;
-    line-height: 1.1;
+    line-height: 1.25;
     hyphens: none;
     -webkit-hyphens: none;
     -moz-hyphens: none;
@@ -762,10 +762,10 @@ a {
 @media (min-width: 768px) {
     .welcome-banner__button .button-image__text {
         white-space: normal;
-        font-size: clamp(0.55rem, 1.4vw, 0.8rem);
-        max-width: 70%;
-        padding: 4px 4px;
-        line-height: 1.15;
+        font-size: clamp(0.6rem, 1.25vw, 0.8rem);
+        max-width: 85%;
+        padding: 4px 8px;
+        line-height: 1.25;
         hyphens: none;
         -webkit-hyphens: none;
         -moz-hyphens: none;
@@ -777,25 +777,29 @@ a {
 
 @media (min-width: 1200px) {
     .welcome-banner__button .button-image__text {
-        font-size: clamp(0.75rem, 1.4vw, 1rem) !important;
+        font-size: clamp(0.7rem, 1.2vw, 0.9rem) !important;
+        max-width: 85% !important;
     }
 }
 
 @media (min-width: 1400px) {
     .welcome-banner__button .button-image__text {
-        font-size: clamp(0.8rem, 1.3vw, 1.1rem) !important;
+        font-size: clamp(0.75rem, 1.15vw, 0.95rem) !important;
+        max-width: 85% !important;
     }
 }
 
 @media (min-width: 1600px) {
     .welcome-banner__button .button-image__text {
-        font-size: clamp(0.85rem, 1.2vw, 1.2rem) !important;
+        font-size: clamp(0.8rem, 1.15vw, 1rem) !important;
+        max-width: 85% !important;
     }
 }
 
 @media (min-width: 1920px) {
     .welcome-banner__button .button-image__text {
-        font-size: clamp(0.9rem, 1.1vw, 1.25rem) !important;
+        font-size: clamp(0.85rem, 1.1vw, 1.1rem) !important;
+        max-width: 85% !important;
     }
 }
     opacity: 1 !important;
@@ -4130,10 +4134,15 @@ section ul:not(.faq__list) li strong,
         padding: 0 6px !important;
     }
     
+    .welcome-banner__button .button-image__img {
+        min-width: 300px !important;
+        max-height: 70px !important;
+    }
+    
     .welcome-banner__button .button-image__text {
-        font-size: clamp(0.35rem, 1.1vw, 0.55rem) !important;
-        max-width: 68% !important;
-        padding: 2px 2px !important;
+        font-size: clamp(0.45rem, 1.15vw, 0.58rem) !important;
+        max-width: 82% !important;
+        padding: 3px 5px !important;
         hyphens: none !important;
         -webkit-hyphens: none !important;
         -moz-hyphens: none !important;
@@ -4386,9 +4395,15 @@ section ul:not(.faq__list) li strong,
 }
 
 @media (max-width: 600px) {
+    .welcome-banner__button .button-image__img {
+        min-width: 320px !important;
+        max-height: 72px !important;
+    }
+    
     .welcome-banner__button .button-image__text {
-        font-size: clamp(0.38rem, 1.15vw, 0.58rem) !important;
-        max-width: 66% !important;
+        font-size: clamp(0.48rem, 1.2vw, 0.62rem) !important;
+        max-width: 82% !important;
+        padding: 3px 6px !important;
         hyphens: none !important;
         -webkit-hyphens: none !important;
         -moz-hyphens: none !important;
