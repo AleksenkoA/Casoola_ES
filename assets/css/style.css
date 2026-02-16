@@ -681,6 +681,7 @@ a {
     filter: none;
 }
 
+
 .welcome-banner__button .button-image__img {
     width: auto;
     height: auto;
@@ -691,36 +692,37 @@ a {
     transition: all 0.3s ease;
 }
 
+
 /* Адаптивные размеры для welcome banner кнопки */
 @media (min-width: 768px) {
     .welcome-banner__button .button-image__img {
-        min-width: 420px;
-        max-width: 500px;
-        max-height: 75px;
+        min-width: 320px;
+        max-width: 420px;
+        max-height: 70px;
     }
 }
 
 @media (min-width: 1200px) {
     .welcome-banner__button .button-image__img {
-        min-width: 500px;
-        max-width: 600px;
-        max-height: 85px;
+        min-width: 360px;
+        max-width: 480px;
+        max-height: 80px;
     }
 }
 
 @media (min-width: 1600px) {
     .welcome-banner__button .button-image__img {
-        min-width: 550px;
-        max-width: 650px;
-        max-height: 95px;
+        min-width: 400px;
+        max-width: 520px;
+        max-height: 90px;
     }
 }
 
 @media (min-width: 1920px) {
     .welcome-banner__button .button-image__img {
-        min-width: 600px;
-        max-width: 700px;
-        max-height: 105px;
+        min-width: 440px;
+        max-width: 560px;
+        max-height: 100px;
     }
 }
 
@@ -750,7 +752,7 @@ a {
     word-wrap: normal;
     overflow-wrap: normal;
     overflow: hidden;
-    padding: 4px 8px;
+    padding: 6px clamp(12px, 2vw, 20px);
     text-align: center;
     line-height: 1.25;
     hyphens: none;
@@ -761,10 +763,10 @@ a {
 
 @media (min-width: 768px) {
     .welcome-banner__button .button-image__text {
-        white-space: normal;
-        font-size: clamp(0.6rem, 1.25vw, 0.8rem);
+        white-space: nowrap;
+        font-size: clamp(0.7rem, 1.3vw, 0.9rem);
         max-width: 85%;
-        padding: 4px 8px;
+        padding: 6px clamp(12px, 2vw, 20px);
         line-height: 1.25;
         hyphens: none;
         -webkit-hyphens: none;
@@ -773,6 +775,7 @@ a {
         word-wrap: normal;
         overflow-wrap: normal;
     }
+    
 }
 
 @media (min-width: 1200px) {
@@ -968,7 +971,7 @@ a {
     -webkit-hyphens: none;
     -moz-hyphens: none;
     -ms-hyphens: none;
-    padding: clamp(2px, 0.5vw, 10px) clamp(2px, 0.5vw, 10px);
+    padding: clamp(4px, 0.8vw, 12px) clamp(8px, 1.5vw, 20px);
     transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 
@@ -987,7 +990,7 @@ a {
     .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__text {
         font-size: clamp(0.55rem, 2.2vw, 0.75rem);
         max-width: 72%;
-        padding: clamp(3px, 0.6vw, 6px) clamp(3px, 0.6vw, 6px);
+        padding: clamp(4px, 0.8vw, 8px) clamp(10px, 1.8vw, 16px);
     }
 }
 
@@ -995,7 +998,7 @@ a {
     .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__text {
         font-size: clamp(0.65rem, 2vw, 0.9rem);
         max-width: 73%;
-        padding: clamp(4px, 0.7vw, 8px) clamp(4px, 0.7vw, 8px);
+        padding: clamp(5px, 0.9vw, 10px) clamp(12px, 2vw, 20px);
     }
 }
 
@@ -1003,7 +1006,7 @@ a {
     .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__text {
         font-size: clamp(0.75rem, 1.8vw, 1rem);
         max-width: 55% !important;
-        padding: clamp(5px, 0.8vw, 10px) clamp(4px, 0.75vw, 9px);
+        padding: clamp(6px, 1vw, 12px) clamp(14px, 2.2vw, 24px);
     }
 }
 
@@ -1011,7 +1014,7 @@ a {
     .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__text {
         font-size: clamp(0.8rem, 1.4vw, 1rem) !important;
         max-width: 55% !important;
-        padding: clamp(4px, 0.7vw, 8px) clamp(4px, 0.75vw, 8px);
+        padding: clamp(6px, 1vw, 10px) clamp(16px, 2.5vw, 28px);
         letter-spacing: clamp(0.4px, 0.06vw, 0.6px);
     }
 }
@@ -1020,7 +1023,7 @@ a {
     .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__text {
         font-size: clamp(0.85rem, 1.3vw, 1.1rem) !important;
         max-width: 55% !important;
-        padding: clamp(5px, 0.8vw, 9px) clamp(5px, 0.85vw, 8px);
+        padding: clamp(7px, 1.1vw, 11px) clamp(18px, 2.8vw, 32px);
         letter-spacing: clamp(0.45px, 0.07vw, 0.65px);
     }
 }
@@ -1029,7 +1032,7 @@ a {
     .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__text {
         font-size: clamp(0.9rem, 1.2vw, 1.2rem) !important;
         max-width: 55% !important;
-        padding: clamp(5px, 0.85vw, 10px) clamp(5px, 0.9vw, 9px);
+        padding: clamp(8px, 1.2vw, 12px) clamp(20px, 3vw, 36px);
         letter-spacing: clamp(0.5px, 0.08vw, 0.7px);
     }
 }
@@ -1038,7 +1041,7 @@ a {
     .button-image:not(.header__btn):not(.welcome-banner__button):not(.spin-rally-alert__button) .button-image__text {
         font-size: clamp(0.95rem, 1.1vw, 1.3rem) !important;
         max-width: 55% !important;
-        padding: clamp(6px, 0.9vw, 11px) clamp(6px, 0.95vw, 10px);
+        padding: clamp(9px, 1.3vw, 13px) clamp(22px, 3.2vw, 40px);
         letter-spacing: clamp(0.55px, 0.09vw, 0.75px);
     }
 }
@@ -4135,14 +4138,15 @@ section ul:not(.faq__list) li strong,
     }
     
     .welcome-banner__button .button-image__img {
-        min-width: 300px !important;
+        min-width: 280px !important;
+        max-width: 100% !important;
         max-height: 70px !important;
     }
     
     .welcome-banner__button .button-image__text {
         font-size: clamp(0.45rem, 1.15vw, 0.58rem) !important;
         max-width: 82% !important;
-        padding: 3px 5px !important;
+        padding: 5px clamp(10px, 1.8vw, 16px) !important;
         hyphens: none !important;
         -webkit-hyphens: none !important;
         -moz-hyphens: none !important;
@@ -4396,14 +4400,15 @@ section ul:not(.faq__list) li strong,
 
 @media (max-width: 600px) {
     .welcome-banner__button .button-image__img {
-        min-width: 320px !important;
+        min-width: 280px !important;
+        max-width: 100% !important;
         max-height: 72px !important;
     }
     
     .welcome-banner__button .button-image__text {
         font-size: clamp(0.48rem, 1.2vw, 0.62rem) !important;
         max-width: 82% !important;
-        padding: 3px 6px !important;
+        padding: 6px clamp(12px, 2vw, 20px) !important;
         hyphens: none !important;
         -webkit-hyphens: none !important;
         -moz-hyphens: none !important;
